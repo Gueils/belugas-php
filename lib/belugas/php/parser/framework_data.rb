@@ -1,4 +1,3 @@
-require 'pry'
 module Belugas
   module Php
     module Parser

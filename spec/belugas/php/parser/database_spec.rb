@@ -21,7 +21,7 @@ describe Belugas::Php::Parser::Database do
 
   describe "#description" do
     it "should return an empty string" do 
-      expect(@database.description).to eq("")
+      expect(@database.description).to eq("The application uses MYSQL")
     end
   end
 

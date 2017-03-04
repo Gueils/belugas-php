@@ -1,3 +1,5 @@
+require 'belugas/php/standard_names/base'
+
 module Belugas
   module Php
     module Feature

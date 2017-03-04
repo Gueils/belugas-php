@@ -1,4 +1,5 @@
-require 'pry'
+require 'belugas/php/parser/framework_data'
+
 module Belugas
   module Php
     module Parser
