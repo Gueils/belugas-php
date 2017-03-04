@@ -1,21 +1,23 @@
 module Belugas
   module Php
     module Parser
-      class Composer
+      class Composer < Base
         FALLBACK_PHP_VERSION = "5.6.30"
         VERSION_REGEX = /[^~><=>==><](\d*?)[^~><=>==><]*/
 
-        attr_reader :content
-
-        def initialize(path)
-          @content = File.read(path)
+        def name
+          "php"
         end
 
-        def php_version
+        def version
           json_bad_formatting_exception {
             value = json_content.fetch("require", {}).fetch("php", FALLBACK_PHP_VERSION)
             value.match(VERSION_REGEX).to_s
           }
+        end
+
+        def categories
+          ["Language"]
         end
 
         private

@@ -1,23 +1,18 @@
-require 'pry'
 module Belugas
   module Php
     module Parser
-      class Database
-        attr_reader :content
+      class Database < Base
         DATABASE_MATCHES_REGEX = /(?:(?<gq>['])(?<name>[a-zA-Z0-9\-_\.]+)\k<gq>|%q<(?<name>[a-zA-Z0-9\-_\.]+)>)/
         DB_CONNECTION = "'DB_CONNECTION'"
 
-        def initialize(path)
-          @content = File.read(path)
-        end
 
         def name
           position = database_matches.index(DB_CONNECTION) + 1
           database_matches[position].tr("'","")
         end
 
-        def version
-          "1234"
+        def categories
+          ["Database"]
         end
 
         private

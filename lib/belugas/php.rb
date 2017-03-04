@@ -1,5 +1,6 @@
 require "thor"
 require "json"
+require 'belugas/php/dispatcher'
 
 module Belugas
   module Php
@@ -8,10 +9,10 @@ module Belugas
 
       desc "analyze --composer-path=/app/code", "PHP feature detection JSON"
       method_option "composer-path", type: :string, default: "/code/composer.json", required: false, aliases: "-p"
+      method_option "database-path", type: :string, default: "/code/config/database.php", required: false, alises: "-d"
 
       def analyze
-        dispatcher = Belugas::Php::Dispatcher.new(options["composer-path"])
-        dispatcher.render
+        Belugas::Php::Dispatcher.new(options["composer-path"], options["database-path"]).render
       end
     end
   end
