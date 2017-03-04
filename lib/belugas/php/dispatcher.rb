@@ -5,7 +5,9 @@ module Belugas
     class Dispatcher
 
       def initialize(path)
-        @requirements = Belugas::Php::Parser::Composer.new(path)
+        @composer = Belugas::Php::Parser::Composer.new(path)
+        @database = Belugas::Php::Parser::Database.new(path)
+        @framework = Belugas::Php::Parser::Framework.new(path)
       end
 
       def render
@@ -18,25 +20,14 @@ module Belugas
       private
 
       def dependencies
-        @dependencies ||= Belugas::Php::LibrariesCollection.new(@requirements.requirements).dependencies
+        [@database, @composer, @framework]
       end
 
       def features
         @features ||= dependencies.map do |dependency|
           Belugas::Php::Feature::Builder.new(dependency).attributes
-        end << python_feature
+        end 
       end
-
-      def python_feature
-       @python_feature ||= {
-          "type" => "feature",
-          "name" => "Php",
-          "version" => "2.7",
-          "description" => "The application uses PHP code",
-          "categories" => ["Language"]
-        }
-      end
-
     end
   end
 end
