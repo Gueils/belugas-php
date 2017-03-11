@@ -1,5 +1,5 @@
-require "thor"
-require "json"
+require 'thor'
+require 'json'
 require 'belugas/php/dispatcher'
 require 'belugas/php/localizer'
 require 'belugas/php/dependency_constructor'
@@ -7,10 +7,10 @@ require 'belugas/php/dependency_constructor'
 module Belugas
   module Php
     class Sonar < Thor
-      package_name "belugas-php"
+      package_name 'belugas-php'
 
-      desc "analyze --directory-path=/app/code", "PHP feature detection JSON"
-      method_option "directory-path", type: :string, default: "/code/", required: false, aliases: "-p"
+      desc 'analyze --directory-path=/app/code', 'PHP feature detection JSON'
+      method_option 'directory-path', type: :string, default: '/code/', required: false, aliases: '-p'
 
       def analyze
         Belugas::Php::Dispatcher.new(dependency_constructor).render
@@ -19,7 +19,7 @@ module Belugas
       private
 
       def localizer
-        @localizer ||= Belugas::Php::Localizer.new(options["directory-path"])
+        @localizer ||= Belugas::Php::Localizer.new(options['directory-path'])
       end
 
       def dependency_constructor
@@ -29,4 +29,4 @@ module Belugas
   end
 end
 
-require "belugas/php/version"
+require 'belugas/php/version'

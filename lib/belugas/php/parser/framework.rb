@@ -4,7 +4,6 @@ module Belugas
   module Php
     module Parser
       class Framework < Base
-        
         def name
           data.name
         end
@@ -14,7 +13,7 @@ module Belugas
         end
 
         def categories
-          ["Framework"]
+          ['Framework']
         end
 
         private
@@ -26,7 +25,6 @@ module Belugas
         def data
           @data ||= Belugas::Php::Parser::FrameworkData.new(json_content)
         end
-
       end
     end
   end

@@ -9,11 +9,11 @@ module Belugas
         end
 
         def name
-          ""
+          ''
         end
 
         def version
-          ""
+          ''
         end
 
         def categories
@@ -25,7 +25,7 @@ module Belugas
         end
 
         def type
-          "feature"
+          'feature'
         end
       end
     end

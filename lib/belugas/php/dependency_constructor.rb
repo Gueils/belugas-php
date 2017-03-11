@@ -1,8 +1,7 @@
 module Belugas
   module Php
     class DependencyConstructor
-
-      def initialize composer_path, database_path
+      def initialize(composer_path, database_path)
         @composer_path = composer_path
         @database_path = database_path
       end

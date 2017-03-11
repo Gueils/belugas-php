@@ -1,8 +1,7 @@
 module Belugas
   module Php
     class Localizer
-
-      def initialize directory_path
+      def initialize(directory_path)
         @directory_path = directory_path
       end
 
@@ -11,11 +10,10 @@ module Belugas
       end
 
       def database_path
-        files = `#{search_path}`
-        if files.empty?
-          ""
+        if files_for_database.empty?
+          ''
         else
-          files.split("\n").first
+          files_for_database.split("\n").first
         end
       end
 
@@ -23,9 +21,15 @@ module Belugas
 
       attr_reader :directory_path
 
-      def search_path
+      def files_for_database
+        @files_for_database ||= `#{command_search}`
+      end
+
+      def command_search
         "find #{directory_path} -type d | find #{directory_path} -name 'database.php'"
       end
     end
   end
 end
+
+

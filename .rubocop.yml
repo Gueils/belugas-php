@@ -1,0 +1,70 @@
+AllCops:
+  TargetRubyVersion:
+    2.2
+  Exclude:
+    - Gemfile
+    - Gemfile.lock
+    - spec/**/*
+
+Documentation:
+  Enabled: false
+
+Metrics/ClassLength:
+  Max: 100
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Style/AsciiIdentifiers:
+  Enabled: false
+
+Style/DefWithParentheses:
+  Enabled: false
+    
+Metrics/LineLength:
+  Enabled: false
+
+Style/BlockComments:
+  Enabled: false
+
+Style/BlockDelimiters:
+  Enabled: false
+
+Style/CaseIndentation:
+  Enabled: false
+    
+Style/EmptyLinesAroundAccessModifier:
+  Enabled: false
+
+Style/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Style/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Style/EmptyLinesAroundModuleBody:
+  Enabled: false
+    
+StringLiterals:
+  Enabled: false
+
+Style/MethodDefParentheses:
+  Enabled: false
+
+Style/TrailingWhitespace:
+  Enabled: false
+
+Style/TrailingBlankLines:
+  Enabled: false
+
+Style/SpaceBeforeBlockBraces:
+  Enabled: false
+
+Style/SpaceBeforeComment:
+  Enabled: false
+
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+
+Style/WordArray:
+  Enabled: false

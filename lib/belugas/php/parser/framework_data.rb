@@ -4,31 +4,37 @@ module Belugas
       class FrameworkData
         FRAMEWORKS = %w(laravel cakephp codeigniter zend yii).freeze
 
-        def initialize requirements
+        def initialize(requirements)
           @requirements = requirements
+          @name = nil
+          @version = nil
           extract
         end
 
         def extract
           find_name
-          find_version   
+          find_version
         end
 
         def name
-          @name || "non-supported"
+          @name || 'non-supported'
         end
 
         def version
-          @version || ""
+          @version || ''
         end
 
-        private 
+        private
 
         def find_name
-          @requirements.each do |key, value|
-            FRAMEWORKS.each do |framework|
-              @name = framework if @requirements[key].to_s.downcase.include?(framework)
-            end
+          @requirements.each do |key, _value|
+            find_framework(key) 
+          end
+        end
+
+        def find_framework(key)
+          FRAMEWORKS.each do |framework|
+            @name = framework if @requirements[key].to_s.downcase.include?(framework)
           end
         end
 
@@ -39,12 +45,12 @@ module Belugas
           end
         end
 
-        def extract_version_from_required key
+        def extract_version_from_required(key)
           require_fields[key].to_f.to_s
         end
 
         def require_fields
-          @require_fields ||= @requirements.fetch("require", {})
+          @require_fields ||= @requirements.fetch('require', {})
         end
       end
     end
