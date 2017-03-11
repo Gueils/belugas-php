@@ -2,22 +2,22 @@ module Belugas
   module Php
     module Parser
       class Composer < Base
-        FALLBACK_PHP_VERSION = "5.6.30"
+        FALLBACK_PHP_VERSION = '5.6.30'.freeze
         VERSION_REGEX = /[^~><=>==><](\d*?)[^~><=>==><]*/
 
         def name
-          "php"
+          'php'
         end
 
         def version
-          json_bad_formatting_exception {
-            value = json_content.fetch("require", {}).fetch("php", FALLBACK_PHP_VERSION)
+          json_bad_formatting_exception do
+            value = json_content.fetch('require', {}).fetch('php', FALLBACK_PHP_VERSION)
             value.match(VERSION_REGEX).to_s
-          }
+          end
         end
 
         def categories
-          ["Language"]
+          ['Language']
         end
 
         private
@@ -27,13 +27,10 @@ module Belugas
         end
 
         def json_bad_formatting_exception
-          begin
-            yield
-          rescue JSON::ParserError
-            FALLBACK_PHP_VERSION 
-          end
+          yield
+        rescue JSON::ParserError
+          FALLBACK_PHP_VERSION
         end
-
       end
     end
   end
