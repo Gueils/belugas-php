@@ -2,38 +2,49 @@ module Belugas
   module Php
     module Parser
       class FrameworkData
-        FRAMEWORKS = { 
-          "laravel/framework" => "laravel",
-          "codeigniter/framework" => "codeigniter",
-          "yiisoft/yii" => "yii",
-          "zend-framework/zend-mvc" => "zend",
-          "cakephp/cakephp" => "cakephp",
-          "non-supported" => "non-supported"
-        }.freeze
-        VERSION_REGEX = /[^~><=>==><](\d*?)[^~><=>==><]*/
+        FRAMEWORKS = %w(laravel cakephp codeigniter zend yii).freeze
 
         def initialize requirements
           @requirements = requirements
-          @element = {}
           extract
         end
 
         def extract
-          @requirements.each do |key, value|
-            @element = { name: key, version: value } if FRAMEWORKS.include?(key)
-          end
+          find_name
+          find_version   
         end
 
         def name
-          FRAMEWORKS.fetch(@element[:name], "non-supported")
+          @name || "non-supported"
         end
 
         def version
-          regex_version.zero? ? "" : regex_version.to_s
+          @version || ""
         end
 
-        def regex_version
-          @element.fetch(:version, "").match(VERSION_REGEX).to_s.to_f
+        private 
+
+        def find_name
+          @requirements.each do |key, value|
+            FRAMEWORKS.each do |framework|
+              @name = framework if @requirements[key].to_s.downcase.include?(framework)
+            end
+          end
+        end
+
+        def find_version
+          return unless @name
+          require_fields.keys.each do |key|
+            @version = extract_version_from_required(key) if key.include?(@name)
+          end
+        end
+
+        def extract_version_from_required key
+          require_fields[key].to_f.to_s
+        end
+
+        def require_fields
+          @require_fields ||= @requirements.fetch("require", {})
         end
       end
     end

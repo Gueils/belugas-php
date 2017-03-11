@@ -2,13 +2,15 @@ module Belugas
   module Php
     module Parser
       class Database < Base
-        DATABASES = %w('mysql' 'pgsql' 'sqlite' 'sqlsrv')
-        SINGLE_QUOTES_MATCHES_REGEX = /(?:(?<gq>['])(?<name>[a-zA-Z0-9\-_\.]+)\k<gq>|%q<(?<name>[a-zA-Z0-9\-_\.]+)>)/
+        DATABASES = %w(mysql pgsql sqlite sqlsrv)
+        DEFAULT_MATCHES = /'default'.{3,}/
         DEFAULT = "'default'"
 
         def name
-          positions.each do |index|
-            return database_matches[index].tr("'", "") if DATABASES.include?(database_matches[index])
+          default_matches.each do |text|
+            DATABASES.each do |database|
+              return database if text.include?(database)
+            end
           end
           "mysql"
         end
@@ -19,17 +21,10 @@ module Belugas
 
         private
 
-        def database_matches
-          @database_matches ||= content.gsub(SINGLE_QUOTES_MATCHES_REGEX).to_a
+        def default_matches
+          content.gsub(DEFAULT_MATCHES).to_a
         end
 
-        def default_position
-          database_matches.index(DEFAULT) || 0
-        end
-
-        def positions
-          (default_position + 1..default_position + 3)
-        end
       end
     end
   end

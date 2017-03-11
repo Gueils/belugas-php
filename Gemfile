@@ -5,5 +5,5 @@ gemspec
 
 group :development do
   gem "pry"
-gem "rspec"
+  gem "rspec"
 end
