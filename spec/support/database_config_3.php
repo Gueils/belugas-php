@@ -19,7 +19,7 @@ return [
 	|--------------------------------------------------------------------------
 	| Default Database Connection Name
 	|--------------------------------------------------------------------------
-	|
+	
 	| Here you may specify which of the database connections below you wish
 	| to use as your default connection for all database work. Of course
 	| you may use many connections at once using the Database library.
@@ -54,7 +54,7 @@ return [
 		'mysql' => [
 			'driver'    => 'mysql',
 			'host'      => env('DB_HOST', 'localhost'),
-			'database'  => env('DB_DATABASE', 'forge'),
+		'database'  => env('DB_DATABASE', 'forge'),
 			'username'  => env('DB_USERNAME', 'forge'),
 			'password'  => env('DB_PASSWORD', ''),
 			'charset'   => 'utf8',

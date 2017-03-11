@@ -18,11 +18,19 @@ describe Belugas::Php::Parser::Database do
     end
 
     context "With no name" do
-      it "should return return mysql as default" do
+      it "should return mysql as default" do
         database = Belugas::Php::Parser::Database.new("spec/support/database_config_3.php")
         expect(database.name).to eq("mysql")
       end
     end
+
+    context "With code igniter app" do
+      it "should return mysql" do
+        database = Belugas::Php::Parser::Database.new("spec/support/database_config_4.php")
+        expect(database.name).to eq("mysql")
+      end
+    end
+
   end
 
   describe "#version" do

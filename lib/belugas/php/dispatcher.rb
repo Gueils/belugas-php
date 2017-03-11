@@ -8,10 +8,8 @@ module Belugas
   module Php
     class Dispatcher
 
-      def initialize(composer_path, database_path)
-        @composer = Belugas::Php::Parser::Composer.new(composer_path)
-        @framework = Belugas::Php::Parser::Framework.new(composer_path)
-        @database = Belugas::Php::Parser::Database.new(database_path)
+      def initialize(dependency_constructor)
+        @dependency_constructor = dependency_constructor
       end
 
       def render
@@ -23,12 +21,9 @@ module Belugas
 
       private
 
-      def dependencies
-        [@database, @composer, @framework]
-      end
 
       def features
-        @features ||= dependencies.map do |dependency|
+        @features ||= @dependency_constructor.dependencies.map do |dependency|
           Belugas::Php::Feature::Builder.new(dependency).attributes
         end 
       end
