@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="belugas-php.png"/>
+</p>
+
 ## Overview
 
 `belugas-php` is a command line interface for the Belugas feature detection analysis
