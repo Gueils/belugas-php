@@ -36,7 +36,7 @@ docker pull icalialabs/belugas-php:latest
 docker run \
   --interactive --tty --rm \
   --volume "$PWD":/code \
-  icalialabs/belugas-php belugas-php analyze
+  icalialabs/belugas-php
 ```
 
 The terminal will stream a json output for each of the features detected in the following format as specified at [belugas](https://github.com/IcaliaLabs/belugas/blob/master/documented-spec/spec/SPEC.md#features)
