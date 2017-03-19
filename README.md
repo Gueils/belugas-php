@@ -4,7 +4,7 @@
 
 ## Overview
 
-`belugas-php` is an engine for detecting application [features](#whats-a-feature) for PHP projects based on static analysis, in other words `belugas-php` engine can detect the language, framework and database your PHP application is using.
+`belugas-php` is an engine for detecting application [features](#what-is-a-feature) for PHP projects based on static analysis, in other words `belugas-php` engine can detect the language, framework and database your PHP application is using.
 
 This engine works as command line interface on your local machine of a Docker container:
 
@@ -27,7 +27,7 @@ This engine works as command line interface on your local machine of a Docker co
 
 ## What is a feature?
 
-A feature is an application attribute detected during the static analysis. This analysis is the act of derivating data from code such as programming language, frameworks, service dependencies and so on. See [here](#features-supported) for a list of attributes this engines currently supports.
+A feature is an application attribute detected during the static analysis. This analysis is the act of derivating data from code such as programming language, frameworks, service dependencies and so on. See [here](#features-supported) for a list of attributes this engine currently supports.
 
 A feature has the following format:
 
@@ -118,7 +118,7 @@ And voilá! The terminal will stream a json output for each of the features dete
   "content": "",
   "cue_locations":[""],
    "engines":["belugas","belugas-php"]
-},
+}
 {
   "type":"feature",
   "name":"PHP",
@@ -143,7 +143,7 @@ And voilá! The terminal will stream a json output for each of the features dete
 
 ## Contributing
 
-Everyone is freely to collaborate, just make sure you follow our [code of conduct](https://github.com/IcaliaLabs/belugas-php/blob/master/CODE_OF_CONDUCT.md). Thank you [contributors](git@github.com:IcaliaLabs/belugas-php.git)!
+Everyone is freely to collaborate, just make sure you follow our [code of conduct](https://github.com/IcaliaLabs/belugas-php/blob/master/CODE_OF_CONDUCT.md). Thank you [contributors](https://github.com/IcaliaLabs/belugas-php/graphs/contributors)!
 
 ### Create an Issue
 
