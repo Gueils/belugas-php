@@ -71,6 +71,8 @@ And the following databases:
 - PostgreSQL
 - SQLite
 
+We detect this features following [Composer](https://getcomposer.org) guideliness, so make sure it's included in your project.
+
 ## Installation
 
 ### Prerequisites
