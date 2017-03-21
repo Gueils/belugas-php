@@ -13,7 +13,7 @@ module Belugas
           'zend' =>  'zend',
           'codeigniter' => 'codeigniter',
           'cakephp' => 'cakephp',
-          'yii' =>  'yii'
+          'yii' => 'yii'
         }.freeze
       end
     end
