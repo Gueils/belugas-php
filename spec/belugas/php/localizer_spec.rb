@@ -19,14 +19,16 @@ describe Belugas::Php::Localizer do
     context 'With multiple files' do
       it 'should return the first file' do
         localizer = Belugas::Php::Localizer.new("#{Dir.pwd}/spec/support/code_test_2/")
-        expect(localizer.database_path).to eq('/code/spec/support/code_test_2/config/database.php')
+        file_path = %r{code_test_2\/config\/database.php}
+        expect(localizer.database_path).to match(file_path)
       end
     end
 
     context 'With just one file' do
       it 'should return the file' do
         localizer = Belugas::Php::Localizer.new("#{Dir.pwd}/spec/support/code_test_3/")
-        expect(localizer.database_path).to eq('/code/spec/support/code_test_3/config/database.php')
+        file_path = %r{code_test_3\/config\/database.php}
+        expect(localizer.database_path).to match file_path
       end
     end
   end
