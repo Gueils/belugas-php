@@ -1,3 +1,6 @@
+[![Code Climate](https://codeclimate.com/github/WhalesIL/belugas-php/badges/gpa.svg)](https://codeclimate.com/github/WhalesIL/belugas-php)
+[![Build Status](https://travis-ci.org/WhalesIL/belugas-php.svg?branch=master)](https://travis-ci.org/WhalesIL/belugas-php)
+
 <p align="center">
   <img src="belugas-php.png"/>
 </p>
