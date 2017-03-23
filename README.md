@@ -80,14 +80,14 @@ We detect this features following [Composer](https://getcomposer.org) guidelines
 
 ### Prerequisites
 
-The Belugas PHP CLI is distributed and run as a [Docker](https://hub.docker.com/r/icalialabs/belugas-php/) image, so you only need to have Docker [installed](https://docs.docker.com/engine/installation/) and running on your machine.
+The Belugas PHP CLI is distributed and run as a [Docker](https://hub.docker.com/r/WhalesIL/belugas-php/) image, so you only need to have Docker [installed](https://docs.docker.com/engine/installation/) and running on your machine.
 
 ### Setup
 
 Fire up your terminal and run: 
 
 ```console
-docker pull icalialabs/belugas-php:latest
+docker pull WhalesIL/belugas-php:latest
 ```
 
 And that's it! 
@@ -108,7 +108,7 @@ And then just execute the following command:
 docker run \
   --interactive --tty --rm \
   --volume "$PWD":/code \
-  icalialabs/belugas-php
+  WhalesIL/belugas-php
 ```
 
 And voilá! The terminal will stream a json output for each of the features detected in the following format: 
