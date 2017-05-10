@@ -1,4 +1,5 @@
-[![Code Climate](https://codeclimate.com/github/WhalesIL/belugas-php/badges/gpa.svg)](https://codeclimate.com/github/WhalesIL/belugas-php)
+[![Code Climate](https://codeclimate.com/github/Gueils/belugas-php/badges/gpa.svg)](https://codeclimate.com/github/Gueils/belugas-php)
+[![Test Coverage](https://codeclimate.com/github/Gueils/belugas-php/badges/coverage.svg)](https://codeclimate.com/github/Gueils/belugas-php/coverage)
 [![Build Status](https://travis-ci.org/WhalesIL/belugas-php.svg?branch=master)](https://travis-ci.org/WhalesIL/belugas-php)
 
 <p align="center">
