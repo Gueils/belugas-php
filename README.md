@@ -1,6 +1,5 @@
 [![Code Climate](https://codeclimate.com/github/Gueils/belugas-php/badges/gpa.svg)](https://codeclimate.com/github/Gueils/belugas-php)
 [![Test Coverage](https://codeclimate.com/github/Gueils/belugas-php/badges/coverage.svg)](https://codeclimate.com/github/Gueils/belugas-php/coverage)
-[![Build Status](https://travis-ci.org/WhalesIL/belugas-php.svg?branch=master)](https://travis-ci.org/WhalesIL/belugas-php)
 
 <p align="center">
   <img src="belugas-php.png"/>
@@ -88,7 +87,7 @@ The Belugas PHP CLI is distributed and run as a [Docker](https://hub.docker.com/
 Fire up your terminal and run: 
 
 ```console
-docker pull WhalesIL/belugas-php:latest
+docker pull whalesil/belugas-php:latest
 ```
 
 And that's it! 
@@ -109,7 +108,7 @@ And then just execute the following command:
 docker run \
   --interactive --tty --rm \
   --volume "$PWD":/code \
-  WhalesIL/belugas-php
+  whalesil/belugas-php
 ```
 
 And voilá! The terminal will stream a json output for each of the features detected in the following format: 
