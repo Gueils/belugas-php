@@ -9,6 +9,8 @@
 /tmp/
 
 # Vim temporal files
-
 *.swp
 *.swo
+
+# Environment variables
+*.env
