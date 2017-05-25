@@ -12,6 +12,9 @@ Documentation:
 Metrics/ClassLength:
   Max: 100
 
+Metrics/LineLength:
+  Max: 100
+
 Metrics/ModuleLength:
   Enabled: false
 
@@ -67,4 +70,9 @@ Style/SpaceInsideBlockBraces:
   Enabled: false
 
 Style/WordArray:
+  Enabled: false
+
+Style/StringLiterals:
+  Description: Checks if uses of quotes match the configured preference.
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#consistent-string-literals
   Enabled: false

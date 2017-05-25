@@ -5,7 +5,7 @@ describe Belugas::Php::Parser::Composer do
   describe '#name' do
     it 'should return PHP' do
       composer = Belugas::Php::Parser::Composer.new('spec/support/composer.json')
-      expect(composer.name).to eq('php')
+      expect(composer.name).to eq('PHP')
     end
   end
 
@@ -35,7 +35,7 @@ describe Belugas::Php::Parser::Composer do
   describe '#description' do
     it 'should return an empty string' do
       composer = Belugas::Php::Parser::Composer.new('spec/support/composer.json')
-      expect(composer.description).to eq('The application uses PHP')
+      expect(composer.description).to eq('The application uses php')
     end
   end
 

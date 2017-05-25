@@ -8,11 +8,10 @@ module Belugas
           'pgsql' => 'postgresql',
           'mysql' => 'mysql',
           'sqlite' => 'sqlite',
-          'oracle' => 'oracle',
           'laravel' => 'laravel',
           'zend' =>  'zend',
-          'codeigniter' => 'codeigniter',
-          'cakephp' => 'cakephp',
+          'codeigniter' => 'code_igniter',
+          'cakephp' => 'cake_php',
           'yii' => 'yii'
         }.freeze
       end

@@ -21,7 +21,7 @@ module Belugas
         end
 
         def version
-          @version || ''
+          @version || 0.0
         end
 
         private
@@ -46,7 +46,8 @@ module Belugas
         end
 
         def extract_version_from_required(key)
-          require_fields[key].to_f.to_s
+          value = require_fields[key].to_f
+          value == "" ? 0.0 : value
         end
 
         def require_fields

@@ -1,7 +1,7 @@
 <?php
 
 /*
-Example for PostgreSQL configuration
+Example for Sqlite3 configuration
 */
 
 return [
@@ -30,7 +30,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'pgsql'),
+    'default' => env('DB_CONNECTION', 'sqlite'),
 
     /*
     |--------------------------------------------------------------------------
@@ -128,3 +128,4 @@ return [
     ],
 
 ];
+
