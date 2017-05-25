@@ -1,5 +1,9 @@
 <?php
 
+/*
+Example for MySQL configuration
+*/
+
 return [
 
 	/*

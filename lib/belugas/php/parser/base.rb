@@ -21,7 +21,7 @@ module Belugas
         end
 
         def description
-          "The application uses #{name.upcase}"
+          "The application uses #{name.downcase}"
         end
 
         def type

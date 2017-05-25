@@ -7,6 +7,14 @@ module Belugas
       end
 
       def dependencies
+        build_dependencies.compact
+      end
+
+      private
+
+      attr_reader :composer_path, :database_path
+
+      def build_dependencies
         if @database_path.empty?
           [composer, framework]
         else
@@ -14,21 +22,19 @@ module Belugas
         end
       end
 
-      private
-
-      attr_reader :composer_path, :database_path
-
       def composer
         Belugas::Php::Parser::Composer.new(composer_path)
       end
 
       def framework
-        Belugas::Php::Parser::Framework.new(composer_path)
+        framework = Belugas::Php::Parser::Framework.new(composer_path)
+        framework if framework.available?
       end
 
       def database
         Belugas::Php::Parser::Database.new(database_path)
       end
+
     end
   end
 end

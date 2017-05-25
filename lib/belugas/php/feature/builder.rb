@@ -11,7 +11,7 @@ module Belugas
         def attributes
           {
             'type' => @dependency.type,
-            'name' => standard_name,
+            'name' => @dependency.name,
             'version' => @dependency.version,
             'description' => @dependency.description,
             'content' => '',
@@ -19,10 +19,6 @@ module Belugas
             'cue_locations' => [''],
             'engines' => ['belugas', 'belugas-php']
           }
-        end
-
-        def standard_name
-          Belugas::Php::StandardNames::Base::NAMES[@dependency.name]
         end
       end
     end

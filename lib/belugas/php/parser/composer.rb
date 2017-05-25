@@ -6,7 +6,7 @@ module Belugas
         VERSION_REGEX = /[^~><=>==><](\d*?)[^~><=>==><]*/
 
         def name
-          'php'
+          'PHP'
         end
 
         def version
