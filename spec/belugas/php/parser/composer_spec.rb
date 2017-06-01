@@ -1,4 +1,3 @@
-
 require 'spec_helper'
 
 describe Belugas::Php::Parser::Composer do
@@ -28,6 +27,13 @@ describe Belugas::Php::Parser::Composer do
       it 'should return fallback php version' do
         composer = Belugas::Php::Parser::Composer.new('spec/support/composer_v2.json')
         expect(composer.version).to eq(Belugas::Php::Parser::Composer::FALLBACK_PHP_VERSION)
+      end
+    end
+
+    context "With a range version is given" do
+      it "should return the first range" do
+        composer = Belugas::Php::Parser::Composer.new('spec/support/composer_v12.json')
+        expect(composer.version).to eq('5.6')
       end
     end
   end
