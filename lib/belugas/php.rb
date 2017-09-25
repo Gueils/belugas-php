@@ -3,6 +3,7 @@ require 'json'
 require 'belugas/php/dispatcher'
 require 'belugas/php/localizer'
 require 'belugas/php/dependency_constructor'
+require 'rescuer'
 
 module Belugas
   module Php
@@ -13,7 +14,13 @@ module Belugas
       method_option 'directory-path', type: :string, default: '/code/', required: false, aliases: '-p'
 
       def analyze
-        Belugas::Php::Dispatcher.new(dependency_constructor).render
+        rescuer = Rescuer.new
+        begin
+          Belugas::Php::Dispatcher.new(dependency_constructor).render
+        rescue Exception => e
+          rescuer.ping e
+          raise e
+        end
       end
 
       private
