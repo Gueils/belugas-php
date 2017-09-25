@@ -26,7 +26,7 @@ This engine works as command line interface on your local machine of a Docker co
 
 ## Why?
 
-`belugas-php` is part of the [Whales](https://github.com/WhalesIL/whales) ecosystem: A set of tools to automatically dockerize your applications.
+`belugas-php` is part of the [Whales](https://github.com/gueils/whales) ecosystem: A set of tools to automatically dockerize your applications.
 
 ## What is a feature?
 
@@ -80,14 +80,14 @@ We detect this features following [Composer](https://getcomposer.org) guidelines
 
 ### Prerequisites
 
-The Belugas PHP CLI is distributed and run as a [Docker](https://hub.docker.com/r/WhalesIL/belugas-php/) image, so you only need to have Docker [installed](https://docs.docker.com/engine/installation/) and running on your machine.
+The Belugas PHP CLI is distributed and run as a [Docker](https://hub.docker.com/r/gueils/belugas-php/) image, so you only need to have Docker [installed](https://docs.docker.com/engine/installation/) and running on your machine.
 
 ### Setup
 
 Fire up your terminal and run: 
 
 ```console
-docker pull whalesil/belugas-php:latest
+docker pull gueils/belugas-php:development
 ```
 
 And that's it! 
@@ -108,7 +108,7 @@ And then just execute the following command:
 docker run \
   --interactive --tty --rm \
   --volume "$PWD":/code \
-  whalesil/belugas-php
+  gueils/belugas-php:development
 ```
 
 And voilá! The terminal will stream a json output for each of the features detected in the following format: 
@@ -148,13 +148,13 @@ And voilá! The terminal will stream a json output for each of the features dete
 
 ## Contributing
 
-Everyone is freely to collaborate, just make sure you follow our [code of conduct](https://github.com/WhalesIL/belugas-php/blob/master/CODE_OF_CONDUCT.md). Thank you [contributors](https://github.com/WhalesIL/belugas-php/graphs/contributors)!
+Everyone is freely to collaborate, just make sure you follow our [code of conduct](https://github.com/gueils/belugas-php/blob/master/CODE_OF_CONDUCT.md). Thank you [contributors](https://github.com/gueils/belugas-php/graphs/contributors)!
 
 ### Create an Issue
 
-Find a bug and don't know how to fix it? Have trouble following the documentation or have a question about the project? Then by all means, please [create an issue](https://github.com/WhalesIL/belugas-php/issues/new).
+Find a bug and don't know how to fix it? Have trouble following the documentation or have a question about the project? Then by all means, please [create an issue](https://github.com/gueils/belugas-php/issues/new).
 
-Just please make sure you check [existing issues](https://github.com/WhalesIL/belugas-php/issues) to see if what you're running into has been addressed already.
+Just please make sure you check [existing issues](https://github.com/gueils/belugas-php/issues) to see if what you're running into has been addressed already.
 
 ### Submit a Pull Request
 
@@ -168,7 +168,7 @@ Once you've created a pull request, mainteners will chime in to review your prop
 
 ### I want to contribute but don't know where to start
 
-That's great also! We already have some [open issues](https://github.com/WhalesIL/belugas-php/issues) for you to dive in.
+That's great also! We already have some [open issues](https://github.com/gueils/belugas-php/issues) for you to dive in.
 
 ## Credits
 
