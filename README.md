@@ -1,9 +1,8 @@
-[![Code Climate](https://codeclimate.com/github/Gueils/belugas-php/badges/gpa.svg)](https://codeclimate.com/github/Gueils/belugas-php)
-[![Test Coverage](https://codeclimate.com/github/Gueils/belugas-php/badges/coverage.svg)](https://codeclimate.com/github/Gueils/belugas-php/coverage)
-
 <p align="center">
   <img src="belugas-php.png"/>
 </p>
+
+![Made with Love by Icalia Labs](https://img.shields.io/badge/With%20love%20by-Icalia%20Labs-ff3434.svg)
 
 ## Overview
 
